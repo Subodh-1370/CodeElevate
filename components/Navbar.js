@@ -45,7 +45,7 @@ const Navbar = () => {
   className="text-2xl font-extrabold tracking-tight text-primary relative group transition-all duration-300"
 >
   <span className="inline-block group-hover:scale-105 transition-transform duration-300">
-    Subodh<span className="text-yellow-500">Blog</span>
+    Code<span className="text-yellow-500">Elevate</span>
   </span>
   <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-yellow-500 transition-all duration-300 group-hover:w-full"></span>
 </Link>
@@ -81,7 +81,7 @@ const Navbar = () => {
             </SheetTrigger>
             <SheetContent>
               <SheetHeader>
-                <SheetTitle className="font-bold text-xl mb-4">SubodhBlog</SheetTitle>
+                <SheetTitle className="font-bold text-xl mb-4">Code Elevate</SheetTitle>
                 <SheetDescription>
                   <div className="flex flex-col gap-4 text-base">
                     {['/', '/about', '/blog', '/contact'].map((path, idx) => (

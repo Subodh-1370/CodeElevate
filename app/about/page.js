@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function About() {
   return (
@@ -9,7 +10,7 @@ export default function About() {
             <div className="w-full md:w-1/3 flex justify-center items-center mb-8 md:mb-0">
               <div className="relative w-48 h-48 rounded-full overflow-hidden border-4 border-blue-500 shadow-lg transition-transform duration-300 transform hover:scale-110">
                 <Image
-                  src="/images/profile.jpg" // Make sure this image is in public/images/profile.jpg
+                  src="/images/profile.jpg"
                   alt="Profile"
                   layout="fill"
                   objectFit="cover"
@@ -22,14 +23,47 @@ export default function About() {
                 About Me
               </h1>
               <p className="text-gray-700 dark:text-gray-200 text-lg mb-4 leading-relaxed">
-                Hi there! I'm Subodh, a dedicated software developer and tech enthusiast with a flair for DSA, Full Stack Development, Machine Learning, AI, and IIoT. This blog is my canvas to share insights, experiences, and tutorials on a myriad of programming languages and cutting-edge technologies. I firmly believe that learning is a lifelong adventure, and I'm excited to guide others on their journey to coding mastery.
+                Hi there! Welcome to Code Elevate, your destination for comprehensive programming knowledge. I'm Subodh, a dedicated software developer with a passion for Full Stack Development, AI/ML, and IIoT.
               </p>
               <p className="text-gray-700 dark:text-gray-200 text-lg mb-4 leading-relaxed">
-                Whether you're a novice eager to learn or a seasoned coder looking to refine your skills, you'll discover a treasure trove of resources and insights here. Together, let's embark on an exhilarating exploration of the programming universe!
+                Whether you're a beginner or experienced coder, you'll find tutorials, insights, and resources here to help level up your skills.
               </p>
               <p className="text-gray-700 dark:text-gray-200 text-lg italic mt-4">
-                "Code is like humor. When you have to explain it, it’s bad." - Cory House
+                "Code is like humor. When you have to explain it, it's bad." – Cory House
               </p>
+            </div>
+          </div>
+
+          {/* Additional Info */}
+          <div className="mt-10 grid gap-6 md:grid-cols-2 text-gray-800 dark:text-gray-100">
+            <div>
+              <h2 className="text-2xl font-semibold mb-2">🔧 Technologies & Languages</h2>
+              <ul className="list-disc list-inside text-lg">
+                <li>JavaScript / TypeScript</li>
+                <li>React / Next.js</li>
+                <li>Node.js / Firebase / MongoDB</li>
+                <li>Python / TensorFlow</li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-2xl font-semibold mb-2">🌐 Links</h2>
+              <ul className="text-lg space-y-1">
+                <li>
+                  <Link href="https://github.com/Subodh-1370/Pollify" target="_blank" className="text-blue-500 hover:underline">
+                    GitHub: Pollify
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://www.linkedin.com/in/subodh-singh-6523391a7/" target="_blank" className="text-blue-500 hover:underline">
+                    LinkedIn: Subodh Singh
+                  </Link>
+                </li>
+                <li>
+                  <Link href="https://github.com/Subodh-1370" target="_blank" className="text-blue-500 hover:underline">
+                    GitHub Profile
+                  </Link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
