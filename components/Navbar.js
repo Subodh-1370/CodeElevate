@@ -14,10 +14,17 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { ModeToggle } from './theme-btn'
+import LoginModal from './LoginModal'
+import SignupModal from './SignupModal'
+import { useAuth } from './AuthContext'
+import { LogOut, User } from 'lucide-react'
 
 const Navbar = () => {
   const [progress, setProgress] = useState(0)
+  const [showLogin, setShowLogin] = useState(false)
+  const [showSignup, setShowSignup] = useState(false)
   const pathname = usePathname()
+  const { user, isAuthenticated, logout } = useAuth()
 
   useEffect(() => {
     setProgress(30)
@@ -29,6 +36,12 @@ const Navbar = () => {
       clearTimeout(timer2)
     }
   }, [pathname])
+
+  const handleLogout = () => {
+    logout()
+    // You could add a toast notification here
+    console.log('User logged out')
+  }
 
   return (
     <nav className="bg-background/60 sticky top-0 z-50 backdrop-blur border-b border-border transition-all">
@@ -64,8 +77,41 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex items-center gap-2 ml-4">
-            <Button variant="outline">Login</Button>
-            <Button variant="outline">Signup</Button>
+            {isAuthenticated ? (
+              <>
+                <div className="flex items-center gap-2 px-3 py-1 bg-accent rounded-md">
+                  <User className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-sm font-medium text-foreground">
+                    {user?.username || user?.name || 'User'}
+                  </span>
+                </div>
+                <Button 
+                  variant="outline" 
+                  onClick={handleLogout}
+                  className="hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Logout
+                </Button>
+              </>
+            ) : (
+              <>
+                <Button 
+                  variant="outline" 
+                  onClick={() => setShowLogin(true)}
+                  className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                >
+                  Login
+                </Button>
+                <Button 
+                  variant="default"
+                  onClick={() => setShowSignup(true)}
+                  className="bg-primary text-primary-foreground hover:bg-primary/90"
+                >
+                  Signup
+                </Button>
+              </>
+            )}
             <ModeToggle />
           </div>
         </div>
@@ -90,8 +136,41 @@ const Navbar = () => {
                       </Link>
                     ))}
                     <div className="mt-4 flex flex-col gap-2">
-                      <Button variant="outline">Login</Button>
-                      <Button variant="outline">Signup</Button>
+                      {isAuthenticated ? (
+                        <>
+                          <div className="flex items-center gap-2 px-3 py-2 bg-accent rounded-md">
+                            <User className="h-4 w-4 text-muted-foreground" />
+                            <span className="text-sm font-medium text-foreground">
+                              {user?.username || user?.name || 'User'}
+                            </span>
+                          </div>
+                          <Button 
+                            variant="outline" 
+                            onClick={handleLogout}
+                            className="hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                          >
+                            <LogOut className="h-4 w-4 mr-2" />
+                            Logout
+                          </Button>
+                        </>
+                      ) : (
+                        <>
+                          <Button 
+                            variant="outline" 
+                            onClick={() => setShowLogin(true)}
+                            className="hover:bg-primary hover:text-primary-foreground transition-colors"
+                          >
+                            Login
+                          </Button>
+                          <Button 
+                            variant="default"
+                            onClick={() => setShowSignup(true)}
+                            className="bg-primary text-primary-foreground hover:bg-primary/90"
+                          >
+                            Signup
+                          </Button>
+                        </>
+                      )}
                     </div>
                   </div>
                 </SheetDescription>
@@ -100,6 +179,14 @@ const Navbar = () => {
           </Sheet>
         </div>
       </div>
+
+      {/* Modals */}
+      {showLogin && (
+        <LoginModal onClose={() => setShowLogin(false)} />
+      )}
+      {showSignup && (
+        <SignupModal onClose={() => setShowSignup(false)} />
+      )}
     </nav>
   )
 }
