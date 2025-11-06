@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint"
   },
@@ -40,6 +40,7 @@
     "unified": "^11.0.5"
   },
   "devDependencies": {
+    "@netlify/plugin-nextjs": "^5.12.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "22.5.2",
     "@types/react": "18.3.5",

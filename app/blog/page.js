@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import fs from "fs";
 import matter from 'gray-matter';
 
@@ -29,9 +30,11 @@ const Blog = () => {
             key={index}
             className="bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden border border-gray-200 dark:border-gray-700"
           >
-            <img
+            <Image
               src={blog.image}
               alt={blog.title}
+              width={400}
+              height={256}
               className="w-full h-64 object-cover"
             />
             <div className="p-6">

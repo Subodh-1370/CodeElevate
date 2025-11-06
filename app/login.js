@@ -4,7 +4,7 @@ import { useState } from 'react';
 export default function LoginPage() {
   const [form, setForm] = useState({ email: '', password: '' });
 
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch('/api/login', {
       method: 'POST',
@@ -35,7 +35,10 @@ export default function LoginPage() {
         className="w-full border p-2 rounded"
         required
       />
-      <button type="submit" className="w-full bg-blue-600 text-white p-2 rounded">
+      <button
+        type="submit"
+        className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 transition"
+      >
         Login
       </button>
     </form>

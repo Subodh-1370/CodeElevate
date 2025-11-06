@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import Typed from 'typed.js';
 import React, {useRef, useEffect} from 'react';
+import Image from 'next/image';
 
 export default function Home() {
     // Create reference to store the DOM element containing the animation
@@ -41,10 +42,13 @@ export default function Home() {
       </div>
     </div>
     <div className="w-full mt-8 lg:mt-0 lg:w-1/2 flex justify-center">
-      <img
+      <Image
         src="https://i.pinimg.com/originals/d3/46/4a/d3464a4351fdf340ccb6bb37c281381a.gif"
         alt="Coding animation"
+        width={600}
+        height={400}
         className="w-full h-auto max-w-md rounded-xl shadow-xl"
+        unoptimized
       />
     </div>
   </section>
@@ -64,7 +68,7 @@ export default function Home() {
             {/* Blog 1 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 transform transition duration-500 hover:scale-105">
-                <img src="https://plus.unsplash.com/premium_photo-1706382043344-4a901b8e1864?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJsb2dnaW5nfGVufDB8fDB8fHww" className="w-full h-64 object-cover rounded-t-lg"/>
+                <Image src="https://plus.unsplash.com/premium_photo-1706382043344-4a901b8e1864?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjV8fGJsb2dnaW5nfGVufDB8fDB8fHww" alt="Blog 1" width={600} height={256} className="w-full h-64 object-cover rounded-t-lg"/>
                 <div className="mt-4">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Blog Post Title 1</h3>
                   <p className="mt-2 text-gray-600 dark:text-gray-400">A brief description of the blog post goes here. It should be engaging and informative.</p>
@@ -81,7 +85,7 @@ export default function Home() {
             {/* Blog 2 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 transform transition duration-500 hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1604933762023-7213af7ff7a7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blog 2" className="w-full h-64 object-cover rounded-t-lg"/>
+                <Image src="https://images.unsplash.com/photo-1604933762023-7213af7ff7a7?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Blog 2" width={600} height={256} className="w-full h-64 object-cover rounded-t-lg"/>
                 <div className="mt-4">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Blog Post Title 2</h3>
                   <p className="mt-2 text-gray-600 dark:text-gray-400">A brief description of the blog post goes here. It should be engaging and informative.</p>
@@ -98,7 +102,7 @@ export default function Home() {
             {/* Blog 3 */}
             <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800 transform transition duration-500 hover:scale-105">
-                <img src="https://images.unsplash.com/photo-1625123627242-97ef1000c6d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmxvZ2dpbmd8ZW58MHx8MHx8fDA%3D" alt="Blog 3" className="w-full h-64 object-cover rounded-t-lg"/>
+                <Image src="https://images.unsplash.com/photo-1625123627242-97ef1000c6d1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8YmxvZ2dpbmd8ZW58MHx8MHx8fDA%3D" alt="Blog 3" width={600} height={256} className="w-full h-64 object-cover rounded-t-lg"/>
                 <div className="mt-4">
                   <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-200">Blog Post Title 3</h3>
                   <p className="mt-2 text-gray-600 dark:text-gray-400">A brief description of the blog post goes here. It should be engaging and informative.</p>
@@ -151,19 +155,19 @@ export default function Home() {
           <div className="flex flex-wrap justify-center">
             <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                <p className="text-gray-600 dark:text-gray-400">"This platform has transformed my coding journey! The resources are top-notch."</p>
+                <p className="text-gray-600 dark:text-gray-400">&quot;This platform has transformed my coding journey! The resources are top-notch.&quot;</p>
                 <p className="mt-4 font-semibold text-gray-800 dark:text-gray-200">- User 1</p>
               </div>
             </div>
             <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                <p className="text-gray-600 dark:text-gray-400">"I love the community aspect and the variety of resources available."</p>
+                <p className="text-gray-600 dark:text-gray-400">&quot;I love the community aspect and the variety of resources available.&quot;</p>
                 <p className="mt-4 font-semibold text-gray-800 dark:text-gray-200">- User 2</p>
               </div>
             </div>
             <div className="w-full sm:w-1/2 lg:w-1/3 p-4">
               <div className="p-6 bg-white rounded-lg shadow-lg dark:bg-gray-800">
-                <p className="text-gray-600 dark:text-gray-400">"A fantastic place to learn and grow as a developer!"</p>
+                <p className="text-gray-600 dark:text-gray-400">&quot;A fantastic place to learn and grow as a developer!&quot;</p>
                 <p className="mt-4 font-semibold text-gray-800 dark:text-gray-200">- User 3</p>
               </div>
             </div>
